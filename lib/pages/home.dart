@@ -10,8 +10,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Flutter 1"),
       ),
-      body: Container(
-        child: Text("Welcome to $days of Flutter by $name"),
+      body: Center(
+        child: Container(
+          child: Text("Welcome to $days days of Flutter by $name"),
+        ),
       ),
       drawer: Drawer(),
     );
