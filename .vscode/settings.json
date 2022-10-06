@@ -1,0 +1,15 @@
+{
+    "yaml.customTags": [
+        "!upload scalar",
+        "!remove scalar",
+        "!keep scalar",
+        "!erase scalar",
+        "!jwt scalar"
+    ],
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/doanthuanthanh88/testapi6/main/schema.json": [
+            "*.yaml",
+            "file:///d%3A/flutter/flutter_1/pubspec.yaml"
+        ]
+    }
+}
