@@ -26,8 +26,10 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    var catalogJson = await rootBundle.loadString("assets/files/catalog.json");
-    var decodeData = jsonDecode(catalogJson);
+    await Future.delayed(const Duration(seconds: 2));
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodeData = jsonDecode(catalogJson);
     var productsData = decodeData["products"];
     CatalogModel.items = List.from(productsData)
         .map<Item>((item) => Item.fromMap(item))
@@ -45,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: (CatalogModel.items.isNotEmpty)
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
             ? ListView.builder(
                 itemCount: CatalogModel.items.length,
                 itemBuilder: (context, index) => ItemWidget(
