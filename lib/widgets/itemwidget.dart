@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_1/models/catalog.dart';
 
 class ItemWidget extends StatelessWidget {
-  const ItemWidget({Key? key, required this.item})
-      : assert(item != null),
-        super(key: key);
-  final Item item;
+  const ItemWidget({Key? key, required this.catalog}) : super(key: key);
+  final catalog;
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +11,13 @@ class ItemWidget extends StatelessWidget {
       shape: const StadiumBorder(),
       child: ListTile(
         onTap: () {
-          print("${item.name} pressed");
+          print("${catalog.name} pressed");
         },
-        leading: Image.network(item.image),
-        title: Text(item.name),
-        subtitle: Text(item.desc),
+        leading: Image.network(catalog.image),
+        title: Text(catalog.name),
+        subtitle: Text(catalog.desc),
         trailing: Text(
-          "\$${item.price}",
+          "\$${catalog.price}",
           textScaleFactor: 1.3,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
