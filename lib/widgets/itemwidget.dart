@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_1/models/catalog.dart';
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({Key? key, required this.catalog}) : super(key: key);
